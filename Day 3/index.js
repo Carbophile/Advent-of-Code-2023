@@ -7,7 +7,7 @@ let finalGearNumbers = []; //We will put the multiples of the two gear numbers h
 
 const fs = require('fs');
 const text = fs.readFileSync("./input.txt", "utf-8");
-const textByLine = text.split("\r\n") //This singular line of code caused me hours and hours of pain, because I was using \n instead of \r\n. The worst part is it worked, just not on Windows.
+const textByLine = text.split(/\r\n|(?<!\r)\n|\r/) //This singular line of code caused me hours and hours of pain, because I was using \n instead of \r\n. The worst part is it worked, just not on Windows.
 
 textByLine.forEach((line, lineIndex) => {
     let number = '';
